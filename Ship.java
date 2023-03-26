@@ -19,7 +19,7 @@ public class Ship implements IDrawable
     private int _engineAnimation = 0;
 
     private long _lastShotFired = 0;
-    private int _refireRate = 200;
+    private int _refireRate = 150;
 
     public ArrayList<Shot> Shots = new ArrayList<Shot>();
 
@@ -35,11 +35,12 @@ public class Ship implements IDrawable
     }
 
     public void Refresh() {
-        int newX = _targetX-(_ship.getWidth()/2);
-        int newY = _targetY-(_ship.getHeight()/2);
+        _curX += (_targetX-_curX) / 10;
+        _curY += (_targetY-_curY) / 10;
 
-        _curX = _targetX;
-        _curY = _targetY;
+        int newX = _curX-(_ship.getWidth()/2);
+        int newY = _curY-(_ship.getHeight()/2);
+
 
         int shadowX = (int)Math.round((newX-400)*.75) + 400;
         int shadowY = (int)Math.round((newY-300)*.75) + 300;
