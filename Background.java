@@ -20,7 +20,6 @@ public class Background implements IDrawable
     }
 
     public void Refresh() {
-        if (true) return;
         int toUseCoord = (_coord/3) % 500;
         _world.getBackground().drawImage(_img, 0, toUseCoord);
         _world.getBackground().drawImage(_img, 0, toUseCoord+500);

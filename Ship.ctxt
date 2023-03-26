@@ -1,0 +1,11 @@
+#BlueJ class context
+comment0.target=Ship
+comment1.params=
+comment1.target=Ship()
+comment2.params=world
+comment2.target=void\ Init(greenfoot.World)
+comment3.params=
+comment3.target=void\ Refresh()
+comment4.params=x\ y
+comment4.target=void\ setTarget(int,\ int)
+numComments=5

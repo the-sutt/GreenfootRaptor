@@ -42,6 +42,7 @@ public class MyWorld extends World
     }
 
     private void RepaintStage() {
+        getBackground().clear();
         _bg.Refresh();
         _ship.Refresh();
     }
