@@ -34,6 +34,8 @@ public class MyWorld extends World
         if (_mouse != null) {
             // update targetPosition for ship
             _ship.setTarget(_mouse.getX(), _mouse.getY());
+
+            if (_mouse.getButton() == 1) _ship.Fire();
         }
 
         _bg.setCoord(_worldYCoord);

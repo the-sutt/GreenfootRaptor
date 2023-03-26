@@ -8,4 +8,6 @@ comment3.params=
 comment3.target=void\ Refresh()
 comment4.params=x\ y
 comment4.target=void\ setTarget(int,\ int)
-numComments=5
+comment5.params=
+comment5.target=void\ Fire()
+numComments=6
