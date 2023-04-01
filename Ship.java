@@ -21,22 +21,33 @@ public class Ship implements IDrawable
     private long _lastShotFired = 0;
     private int _refireRate = 150;
 
+    private int _health = 100;
+
+    private int _speed = 10;
+
     public ArrayList<Shot> Shots = new ArrayList<Shot>();
+
+    private Font myFont;
+    private int _shotCounter = 0;
 
     public Ship()
     {
-        _ship = new GreenfootImage("ship.png");
-        _shadow = new GreenfootImage("ship_shadow.png");
         _engine = new GreenfootImage("ship_engine.png");
+        myFont = new Font("Hermit", false, false, 24);
     }
 
     public void Init(World world) {
         _world = world;
     }
 
+    public void setModel(String model) {
+        _ship = new GreenfootImage(model+".png");
+        _shadow = new GreenfootImage(model+"_shadow.png");
+    }
+
     public void Refresh() {
-        _curX += (_targetX-_curX) / 10;
-        _curY += (_targetY-_curY) / 10;
+        _curX += ((_targetX-_curX) / 10)>_speed?_speed:(_targetX-_curX) / 10;
+        _curY += ((_targetY-_curY) / 10)>_speed?_speed:(_targetY-_curY) / 10;
 
         int newX = _curX-(_ship.getWidth()/2);
         int newY = _curY-(_ship.getHeight()/2);
@@ -89,6 +100,7 @@ public class Ship implements IDrawable
             shot.x = _curX;
             shot.y = _curY-15;
             shot.speed = 10;
+            _shotCounter++;
             Shots.add(shot);
         }
     }
