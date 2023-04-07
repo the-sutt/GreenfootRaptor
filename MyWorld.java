@@ -19,6 +19,9 @@ public class MyWorld extends World
         _bg.Init(this);
         _ship = new Ship();
         _ship.Init(this);
+        _ship.setModel("fighter");
+//        ScoreBoard sb = new ScoreBoard();
+//        addObject(sb,400,300);
     }
 
     // public MouseInfo getMouseInfo() {
@@ -37,7 +40,6 @@ public class MyWorld extends World
 
             if (_mouse.getButton() == 1) _ship.Fire();
         }
-
         _bg.setCoord(_worldYCoord);
 
         RepaintStage();

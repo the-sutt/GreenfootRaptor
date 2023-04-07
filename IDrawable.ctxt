@@ -1,0 +1,7 @@
+#BlueJ class context
+comment0.target=IDrawable
+comment1.params=world
+comment1.target=void\ Init(greenfoot.World)
+comment2.params=
+comment2.target=void\ Refresh()
+numComments=3
